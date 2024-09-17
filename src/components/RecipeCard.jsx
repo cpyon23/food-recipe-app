@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function RecipeCard({ recipe }) {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // Initialize AOS with a duration of 1000ms
+  }, []);
 
   const viewRecipe = () => {
     navigate(`/recipe/${recipe.idMeal}`); // Assuming each recipe has a unique id (idMeal)
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out relative max-h-96">
+    <div 
+      data-aos="fade-up"
+      data-aos-delay="100"
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out relative max-h-96">
       {/* Image Section */}
       <img
         className="w-full h-48 object-cover"
