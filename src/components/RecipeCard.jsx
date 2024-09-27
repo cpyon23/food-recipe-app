@@ -13,15 +13,17 @@ function RecipeCard({ recipe }) {
   const viewRecipe = () => {
     navigate(`/recipe/${recipe.idMeal}`); // Assuming each recipe has a unique id (idMeal)
   };
-
+  
   return (
-    <div 
+    <button 
       data-aos="fade-up"
       data-aos-delay="100"
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out relative max-h-96">
+      onClick={viewRecipe}
+      className="bg-transparent rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 ease-in-out relative max-h-96"
+    >
       {/* Image Section */}
       <img
-        className="w-full h-48 object-cover"
+        className="w-full h-48 rounded-b-3xl object-cover"
         src={recipe.strMealThumb}
         alt={recipe.strMeal}
       />
@@ -39,15 +41,8 @@ function RecipeCard({ recipe }) {
             <span className="font-semibold">Area:</span> {recipe.strArea}
           </p>
         </div>
-
-        <button
-          onClick={viewRecipe}
-          className="mt-4 px-4 py-2 bg-green-500 text-white rounded-full transition-transform transform hover:scale-105 focus:outline-none self-start"
-        >
-          View Recipe
-        </button>
       </div>
-    </div>
+    </button>
   );
 }
 

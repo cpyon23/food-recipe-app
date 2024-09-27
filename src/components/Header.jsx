@@ -9,7 +9,7 @@ function Header({ searchTerm, setSearchTerm, handleSearch, isDarkMode, toggleDar
   };
 
   return (
-    <header className="fixed top-1 inset-x-0 z-50 mx-auto max-w-2xl rounded-full bg-gray-100 dark:bg-gray-700 shadow-md transition-opacity duration-500 ease-in-out ">
+    <header className="fixed top-1 inset-x-0 z-50 mx-auto max-w-md rounded-full bg-gray-100 dark:bg-gray-700 shadow-md transition-opacity duration-500 ease-in-out ">
       <div className="container mx-auto flex justify-between items-center">
         <form onSubmit={handleSearch} className="flex items-center space-x-2 w-full">
             
@@ -25,7 +25,7 @@ function Header({ searchTerm, setSearchTerm, handleSearch, isDarkMode, toggleDar
             />
             <button
                 type="submit"
-                className="px-4 py-2 bg-yellow-500 rounded-full text-white"
+                className="px-4 py-2 text-gray-900 dark:text-white"
             >
                 Search
             </button>
@@ -34,7 +34,7 @@ function Header({ searchTerm, setSearchTerm, handleSearch, isDarkMode, toggleDar
         {/* Dark Mode Toggle */}
         <button
           onClick={toggleDarkMode}
-          className="ml-4 p-2 bg-yellow-500 rounded-full text-white"
+          className="ml-4 p-2 bg-gray-800 dark:bg-yellow-600 rounded-full text-white"
         >
           {isDarkMode ? '☀️' : '🌙'}
         </button>
